@@ -8,12 +8,21 @@ import { Forecast } from '../forecast';
   styleUrls: ['./forecast.component.css']
 })
 export class ForecastComponent implements OnInit {
-  myForecast: Forecast[] = [];
+  cityForecast: Forecast[] = [];
 
   constructor(private ws: WeatherService) { }
 
   ngOnInit() {
-    this.myForecast = this.ws.getForecast();
+    this.ws.getForecast('London')
+      .subscribe((data) => {
+        for (let i = 3; i < data.list.length; i += 8) {
+          const temporary = new Forecast(data.list[i].dt_txt,
+                                        data.list[i].weather[0].icon,
+                                        data.list[i].main.temp_max,
+                                        data.list[i].main.temp_min);
+          this.cityForecast.push(temporary);
+        }
+      });
   }
 
 }

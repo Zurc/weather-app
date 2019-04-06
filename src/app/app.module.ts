@@ -8,6 +8,7 @@ import { MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule } f
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ForecastComponent } from './forecast/forecast.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ForecastComponent } from './forecast/forecast.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

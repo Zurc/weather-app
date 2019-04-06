@@ -7,7 +7,7 @@
 
 <mat-card>
   <mat-card-content>
-    <div class="day" *ngFor="let day of myForecast" >
+    <div class="day" *ngFor="let day of cityForecast" >
       <h3>{{ day.day }}</h3>
       <img src="{{ day.icon }}" alt="image">
       <p>{{ day.tempMax }} °C</p>
