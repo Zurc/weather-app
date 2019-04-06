@@ -1,8 +1,7 @@
-<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()" class="">
+<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()" class="align-center">
   <mat-form-field>
     <input matInput placeholder="city" formControlName="forecastCity">
   </mat-form-field>
-
 </form>
 
 <mat-card *ngIf="cityForecast.length > 0" >
