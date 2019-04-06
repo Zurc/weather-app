@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../weather.service';
+import { Forecast } from '../forecast';
 
 @Component({
   selector: 'app-forecast',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forecast.component.css']
 })
 export class ForecastComponent implements OnInit {
+  myForecast: Forecast[] = [];
 
-  constructor() { }
+  constructor(private ws: WeatherService) { }
 
   ngOnInit() {
+    this.myForecast = this.ws.getForecast();
   }
 
 }
