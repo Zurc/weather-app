@@ -7,9 +7,9 @@ import { Forecast } from './forecast';
 export class WeatherService {
   foreCast: Forecast[] = [
     new Forecast('Saturday, April 6', 'https://openweathermap.org/img/w/01d.png', '12.12', '11.07'),
-    new Forecast('Sunday, April 7', 'https://openweathermap.org/img/w/01d.png', '12.12', '11.07'),
-    new Forecast('Monday, April 8', 'https://openweathermap.org/img/w/01d.png', '12.12', '11.07'),
-    new Forecast('Tuesday, April 9', 'https://openweathermap.org/img/w/01d.png', '12.12', '11.07'),
+    new Forecast('Sunday, April 7', 'https://openweathermap.org/img/w/01d.png', '9.26', '6.32'),
+    new Forecast('Monday, April 8', 'https://openweathermap.org/img/w/01d.png', '11.73', '10.32'),
+    new Forecast('Tuesday, April 9', 'https://openweathermap.org/img/w/01d.png', '7.43', '5.52'),
     new Forecast('Wednesday, April 10', 'https://openweathermap.org/img/w/01d.png', '12.12', '11.07')
   ];
 

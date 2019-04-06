@@ -7,39 +7,11 @@
 
 <mat-card>
   <mat-card-content>
-    <div class="day">
-      <h3>Saturday, April 6</h3>
-      <img src="https://openweathermap.org/img/w/01d.png" alt="image">
-      <p>12.12 °C</p>
-      <p>11.77 °C</p>
-    </div>
-
-    <div class="day">
-      <h3>Saturday, April 6</h3>
-      <img src="https://openweathermap.org/img/w/01d.png" alt="image">
-      <p>12.12 °C</p>
-      <p>11.77 °C</p>
-    </div>
-
-    <div class="day">
-      <h3>Saturday, April 6</h3>
-      <img src="https://openweathermap.org/img/w/01d.png" alt="image">
-      <p>12.12 °C</p>
-      <p>11.77 °C</p>
-    </div>
-
-    <div class="day">
-      <h3>Saturday, April 6</h3>
-      <img src="https://openweathermap.org/img/w/01d.png" alt="image">
-      <p>12.12 °C</p>
-      <p>11.77 °C</p>
-    </div>
-
-    <div class="day">
-      <h3>Saturday, April 6</h3>
-      <img src="https://openweathermap.org/img/w/01d.png" alt="image">
-      <p>12.12 °C</p>
-      <p>11.77 °C</p>
+    <div class="day" *ngFor="let day of myForecast" >
+      <h3>{{ day.day }}</h3>
+      <img src="{{ day.icon }}" alt="image">
+      <p>{{ day.tempMax }} °C</p>
+      <p>{{ day.tempMin }} °C</p>
     </div>
   </mat-card-content>
 </mat-card>
