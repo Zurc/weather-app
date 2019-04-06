@@ -8,8 +8,8 @@
 <mat-card>
   <mat-card-content>
     <div class="day" *ngFor="let day of cityForecast" >
-      <h3>{{ day.day }}</h3>
-      <img src="{{ day.icon }}" alt="image">
+      <h3>{{ day.day | date: 'EEEE, MMMM d' }}</h3>
+      <img src="https://raw.githubusercontent.com/alvaro911/weatherApp/master/icons/{{ day.icon }}.png" alt="image" width="100">
       <p>{{ day.tempMax }} °C</p>
       <p>{{ day.tempMin }} °C</p>
     </div>
