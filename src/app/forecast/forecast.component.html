@@ -1,6 +1,6 @@
-<form class="align-center">
+<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()" class="">
   <mat-form-field>
-    <input matInput placeholder="city">
+    <input matInput placeholder="city" formControlName="forecastCity">
   </mat-form-field>
 
 </form>
@@ -8,10 +8,9 @@
 <mat-card *ngIf="cityForecast.length > 0" >
   <mat-card-content>
     <div class="day" *ngFor="let day of cityForecast" >
-      <h3>{{ day.day | date: 'EEEE, MMMM d' }}</h3>
+      <h3>{{ day.day | date: 'EE, MMM d' }}</h3>
       <img src="https://raw.githubusercontent.com/alvaro911/weatherApp/master/icons/{{ day.icon }}.png" alt="image" width="100">
-      <p>{{ day.tempMax }} °C</p>
-      <p>{{ day.tempMin }} °C</p>
+      <p>{{ day.temp }} °C</p>
     </div>
   </mat-card-content>
 </mat-card>
