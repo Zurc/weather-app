@@ -7,11 +7,13 @@ import { MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule } f
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
