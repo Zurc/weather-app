@@ -5,7 +5,7 @@
 
 </form>
 
-<mat-card>
+<mat-card *ngIf="cityForecast.length > 0" >
   <mat-card-content>
     <div class="day" *ngFor="let day of cityForecast" >
       <h3>{{ day.day | date: 'EEEE, MMMM d' }}</h3>
