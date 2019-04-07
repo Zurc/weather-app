@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  appId: 'e69e06f0a5aeca3cc57379405f390f54'
 };
