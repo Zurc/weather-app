@@ -3,7 +3,7 @@ import { Forecast } from './forecast';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
-import { throwError, Observable } from 'rxjs';
+import { throwError, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,7 @@ export class WeatherService {
       .get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${environment.appId}&units=metric`)
       .pipe(
         map(response => response),
-        catchError(error => {
-          console.error(error);
-          throwError(error);
-        })
+        catchError(error => of(throwError(error)))
       );
   }
 }
