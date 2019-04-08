@@ -24,10 +24,11 @@ export class ForecastComponent implements OnInit {
     this.cityForecast = [];
     this.ws.getForecast(this.forecastForm.value.forecastCity)
       .subscribe((data) => {
-        for (let i = 3; i < data.list.length; i += 8) {
-          const temporary = new Forecast(data.list[i].dt_txt,
-                                        data.list[i].weather[0].icon,
-                                        data.list[i].main.temp);
+        const tempArr = data.list.filter(item => item.dt_txt.endsWith('12:00:00'));
+        for (const el of tempArr) {
+          const temporary = new Forecast(el.dt_txt,
+                                        el.weather[0].icon,
+                                        el.main.temp);
           this.cityForecast.push(temporary);
         }
       });
